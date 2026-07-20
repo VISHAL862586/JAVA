@@ -2,14 +2,14 @@ public class CountPalindroms {
     public static int TotalPalindroms(String str){
         int count =0;
         for(int i=0; i<str.length(); i++){
-            count+=expands(str, i, i);
+            count+=checkPalindrom(str, i, i);
 
-            count+=expands(str, i, i+1);
+            count+=checkPalindrom(str, i, i+1);
         }
         return count;
     }
 
-    public static int expands(String str, int left, int right){
+    public static int checkPalindrom(String str, int left, int right){
         int count =0;
         if(left>=0 && right<str.length() && str.charAt(left)==str.charAt(right)){
             count++;
